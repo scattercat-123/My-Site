@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('fonts/JetBrainsMono-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    background-color: beige;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2{
+    font-family: 'JetBrainsMono', monospace; 
+}
+
+.banner {
+    position :relative;
+    height: 30vh;
+    background: #1a1b26; 
+    display :flex;
+    padding: 7vh;
+    border-bottom: 5px solid green;
+}
+
+.banner-text{
+    padding-left: 10vh;
+}
+
+.banner-text h1 {
+    color: #7aa2f7;
+    font-size: 100px;
+}
+
+.banner-text span {
+    color: #bb9af7d2;
+    font-family: 'JetBrainsMono', monospace; 
+    font-size: 100px;
+    padding-left: 10vh;
+}
+.banner-text span::after {
+    content: "▌";
+    animation: blink-caret 1s step-end infinite;
+}
+
+.pfp {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.pfp img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 20px;
+    border: 5px solid #565f89;
+    transition: opacity 0.4s ease;
+}
+
+.pfp-hover {
+    opacity: 0;
+}
+
+.pfp:hover .pfp-hover {
+    opacity: 1;
+}
+
+.pfp:hover .pfp-default {
+    opacity: 0;
+}
+
+@keyframes blink-caret {
+    from, to { color: transparent; }
+    50% { color: rgb(197, 220, 197); }
+}
+
+.about-me{
+    margin: 10px;
+}
+
+.about-me h2 {
+    font-size: 50px;
+}
+
+.dot{
+    display: inline-block;
+    width: 0.55em;
+    height: 0.55em;
+    border-radius: 50%;
+    background-color: #3665c9;
+    margin-right: 10px;
+}
+
+.play{
+    display: inline-block;
+    border-left: 0.6em solid #3665c9;
+    border-top: 0.35em solid transparent;
+    border-bottom: 0.35em solid transparent;
+    margin-right: 20px;
+    vertical-align: middle;
+}
