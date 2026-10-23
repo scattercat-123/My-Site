@@ -28,6 +28,8 @@ body {
     font-family: Arial, sans-serif;
     min-height: 200vh;
     scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2{
@@ -176,4 +178,20 @@ h2{
     font-family: 'JetbrainsMono', monospace;
     margin-left: 50px;
     margin-top: 10px;
+}
+.footer{
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.footer hr{
+    border:none;
+    height: 2px;
+    margin: 20px auto;
+    width: 90%;
+    background-color: #33333368;
+}
+.footer a, .footer p{
+    color: grey;
 }
