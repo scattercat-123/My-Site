@@ -5,26 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atharv Sharma</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 </head>
 <body>
     <div class="banner">
-    <div class="pfp">
-        <img class="pfp-default" src="images/PFP_3.png" alt="PFP"/>
-        <img class="pfp-hover" src="images/meowth_PFP.jpg" alt="PFP meowth"/>
-    </div>
+        <div class="pfp">
+            <img class="pfp-default" src="images/PFP_3.png" alt="PFP"/>
+            <img class="pfp-hover" src="images/meowth_PFP.jpg" alt="PFP meowth"/>
+        </div>
         <div class="banner-text">
             <h1>Hi! I'm</h1>
             <span>~Atharv</span>
         </div>
+        <div class="links">
+            <div class="github">
+                <a href="https://github.com/scattercat-123" target="_blank"rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+            <div class="discord">
+                <a href="https://www.youtube.com/@magicsmoke3am" target="_blank"rel="noopener noreferrer">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+            </div>
+            <div class="youtube">
+                <a href="https://discord.com/users/920979530762551297" target="_blank"rel="noopener noreferrer">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+            <div class="playstation">
+                <a href="https://profile.playstation.com/Fr4gm3nted-gltch" target="_blank"rel="noopener noreferrer">
+                    <i class="fa-brands fa-playstation"></i>
+                </a>
+            </div>
+            <div class="steam">
+                <a href="https://steamcommunity.com/profiles/76561199869946204/" target="_blank"rel="noopener noreferrer">
+                    <i class="fa-brands fa-steam"></i>
+                </a>
+            </div>
+            <div class="reddit">
+                <a href="https://www.reddit.com/user/scattercat_123/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-reddit-alien"></i>
+                </a>
+            </div>
+        </div>
     </div>
     <div class = "about-me">
-        <h2><span class="dot"></span><span class="play"></span><span class="cd">cd </span>./About Me</h2>
+        <h2>
+            <span class="dot"></span>
+            <svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4 L20 12 L6 20 Z"/></svg></span>
+            <span class="cat">cat </span>
+            <span class="md">about-me.md</span>
+        </h2>
+        <div class="output" id="about-output">Loading...</div>
     </div>
-
+    
     <script>
         document.addEventListener('contextmenu', function(event) {
             event.preventDefault();
         });
+        fetch('about-me.md')
+            .then(res => res.text())
+            .then(md => {
+            document.getElementById('about-output').innerHTML = marked.parse(md);
+            })
+            .catch(() => {
+            document.getElementById('about-output').textContent = 'cat: about-me.md: No such file';
+            });
     </script>
 </body>
 </html>
